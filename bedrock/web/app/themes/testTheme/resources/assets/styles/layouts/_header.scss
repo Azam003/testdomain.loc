@@ -1,0 +1,311 @@
+@import "../common/variables";
+
+.xs_menu {
+  width: 100%;
+  top: 0;
+  left: -100%;
+  position: fixed;
+  height: 100vh;
+  z-index: 9999;
+  transition: all 0.5s;
+  display: none;
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba($black, 0.4);
+    position: absolute;
+    z-index: 99999;
+  }
+
+  .xs_cont {
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+    background-color: #333;
+    position: relative;
+    z-index: 999999;
+
+    .c_xs_menu {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+
+      .close_btn {
+        width: 30px;
+        opacity: 0.7;
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    ul {
+      @include df(column,flex-start,flex-start);
+
+      li {
+        a {
+          display: block;
+          padding: 10px 20px;
+          color: #fff;
+          font-size: 18px;
+          text-transform: uppercase;
+
+          &:hover {
+            background-color: $main_color;
+          }
+        }
+      }
+    }
+
+    @include df(column, center, flex-start);
+  }
+}
+
+.xs_menu.active {
+  left: 0%;
+  transition: 0.5s;
+}
+
+.o_xs_menu {
+  width: 30px;
+  cursor: pointer;
+  transition: 0.5s;
+  display: none;
+
+  img {
+    width: 100%;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.header {
+  .top_header {
+    background-color: #f4f4f4;
+
+    .container {
+      @include df(row, space-between, center);
+
+      max-width: $max_width;
+      margin: 0 auto;
+      padding: 2vh;
+
+      .top_header_left_side {
+        @include df(row, flex-start, center);
+
+        .top_header_logo {
+          width: 200px;
+          display: block;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .top_header_address {
+          margin-left: 30px;
+
+          p {
+            font-size: 16px;
+            color: $main_color;
+          }
+        }
+
+        .top_header_download_price {
+          margin-left: 30px;
+
+          a {
+            color: $main_color;
+            font-size: 16px;
+
+            &:hover {
+              color: #00b9eb;
+            }
+          }
+        }
+      }
+
+      .top_header_right_side {
+        .top_header_order_btn {
+          background-color: $white;
+          border-radius: 10px;
+          padding: 10px 20px;
+          text-transform: uppercase;
+          font-size: 14px;
+          color: $black;
+          border: none;
+          box-shadow: 0 2px 10px rgba($black, 0.3);
+
+          &:hover {
+            background-color: $main_color;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom_header {
+    background-color: $white;
+    box-shadow: 0 10px 20px rgba($black, 0.1);
+
+    .container {
+      @include df(row, space-between, center);
+
+      max-width: $max_width;
+      margin: 0 auto;
+
+      .bottom_header_left_side {
+        .nav-primary {
+          .nav {
+            @include df(row, flex-start, center);
+
+            li {
+              padding-right: 30px;
+
+              a {
+                color: $main_color;
+                font-size: 15px;
+                padding: 15px 0;
+                display: block;
+                font-weight: 500;
+                border-bottom: 2px solid transparent;
+
+                &:hover {
+                  border-bottom-color: $main_color;
+                }
+              }
+
+              &.current-menu-item {
+                a {
+                  color: $black;
+                  border-bottom-color: $main_color;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .bottom_header_right_side {
+        .bottom_header_phone {
+          color: $main_color;
+          font-size: 20px;
+          font-weight: bold;
+          display: block;
+
+          &:hover {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .xs_menu {
+    display: block;
+  }
+
+  .o_xs_menu {
+    display: block;
+  }
+
+  .header {
+    .top_header {
+      .container {
+        @include df(column, center, center);
+
+        .top_header_left_side {
+          @include df(column, center, center);
+
+          .top_header_logo {
+            margin: 0 auto;
+          }
+
+          .top_header_address {
+            margin: 5px auto;
+          }
+
+          .top_header_download_price {
+            margin-left: 0;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+
+    .bottom_header {
+      .container {
+        padding: 2vh;
+
+        .bottom_header_left_side {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .xs_menu {
+    display: block;
+  }
+
+  .o_xs_menu {
+    display: block;
+  }
+
+  .header {
+    .top_header {
+      .container {
+        @include df(column, center, center);
+
+        .top_header_left_side {
+          justify-content: center;
+        }
+      }
+    }
+
+    .bottom_header {
+      .container {
+        padding: 2vh;
+
+        .bottom_header_left_side {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .xs_menu {
+    display: block;
+  }
+
+  .o_xs_menu {
+    display: block;
+  }
+
+  .header {
+    .bottom_header {
+      .container {
+        padding: 2vh;
+
+        .bottom_header_left_side {
+          display: none;
+        }
+      }
+    }
+  }
+}

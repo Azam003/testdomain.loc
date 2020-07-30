@@ -1,0 +1,29 @@
+/** Import Bootstrap functions */
+@import "~bootstrap/scss/functions";
+
+$theme-colors: (
+  primary: #525ddc
+);
+$max_width: 1200px;
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;
+
+@mixin df($fd, $jc, $ai) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+$main_color: #3282b8;
+$white: #fff;
+$black: #222;
+$max_width: 1200px;
+
+.container {
+  max-width: $max_width;
+  margin: 0 auto;
+  position: relative;
+}

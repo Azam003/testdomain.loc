@@ -1,0 +1,167 @@
+@import "../common/variables";
+
+.main_form {
+  padding: 5vw 0;
+
+  .h3 {
+    font-size: 30px;
+    color: $black;
+    padding-bottom: 20px;
+  }
+
+  form {
+    @include df(row, space-between, flex-start);
+
+    flex-wrap: wrap;
+    width: 100%;
+
+    .l_side {
+      width: 49%;
+
+      @include df(row, space-between, flex-start);
+
+      flex-wrap: wrap;
+
+      .inp {
+        width: 49%;
+        margin-bottom: 10px;
+
+        input {
+          background-color: #f4f4f4;
+          border: 1px solid #eee;
+          padding: 10px;
+          width: 100%;
+          border-radius: 5px;
+        }
+      }
+
+      .inp_name {
+        width: 100%;
+      }
+    }
+
+    .r_side {
+      width: 49%;
+
+      .inp {
+        width: 100%;
+
+        textarea {
+          width: 100%;
+          background-color: #f4f4f4;
+          border: 1px solid #eee;
+          padding: 10px;
+          border-radius: 5px;
+          min-height: 160px;
+          resize: none;
+        }
+      }
+    }
+
+    .line {
+      @include df(row, space-between, center);
+
+      margin-top: 10px;
+      width: 100%;
+
+      p {
+        font-size: 14px;
+        color: $black;
+
+        a {
+          color: $main_color;
+
+          &:hover {
+            color: $black;
+          }
+        }
+      }
+
+      .btn_send {
+        background-color: $main_color;
+        padding: 10px 20px;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: $white;
+        border: none;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: $black;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .main_form {
+    .h3 {
+      font-size: 24px;
+      padding-bottom: 15px;
+    }
+
+    form {
+      @include df(row, center, flex-start);
+
+      .l_side {
+        width: 100%;
+
+        .inp {
+          width: 100%;
+        }
+      }
+
+      .r_side {
+        width: 100%;
+      }
+
+      .line {
+        @include df(column, center, center);
+
+        p {
+          text-align: center;
+        }
+
+        .btn_send {
+          margin: 0 auto;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .main_form {
+    .h3 {
+      font-size: 24px;
+      padding-bottom: 15px;
+    }
+
+    form {
+      @include df(row, center, flex-start);
+
+      .l_side {
+        width: 100%;
+      }
+
+      .r_side {
+        width: 100%;
+      }
+
+      .line {
+        @include df(column, center, center);
+
+        p {
+          text-align: center;
+        }
+
+        .btn_send {
+          margin: 0 auto;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
